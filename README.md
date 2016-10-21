@@ -1,6 +1,6 @@
 You can view this content in slideshow format at:
 
-http://rawgit.com/imapex-training/mod_adv_git/master/slides/slide.html
+http://rawgit.com/imapex-training/mod_adv_git/master/slides/index.html
 
 [item]: # (slide)
 
