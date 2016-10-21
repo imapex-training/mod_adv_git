@@ -1,7 +1,7 @@
 ---
 input_file: ./README.md
 output_directory: ./slides
-output_filename: slide
+output_filename: index 
 reveal:
   template:
   template_color: FFFFFF
