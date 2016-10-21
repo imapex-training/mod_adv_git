@@ -105,6 +105,7 @@ opensource projects as contributors likely would not have access to push code to
 
 For more information see this [Stack Overflow Post](http://stackoverflow.com/questions/3611256/forking-vs-branching-in-github)
 [item]: # (slide)
+
 ## Branches
 
 * Used to develop features
@@ -140,10 +141,12 @@ git branch -m mynewfeature
 * useful when navigating between branches
 * create a tempory "stash" of **staged** files
 * apply them to another branch
+
 Stash Changes:
 ```
 git stash
 ```
+
 Unstash Changes:
 ```
 git stash apply
@@ -205,7 +208,6 @@ git merge --abort
 * apply all commits from one branch to another
 * syncing changes to a a feature branch
 
-![image](img/rebase.png)
 
 [item]: # (/slide)
 [item]: # (slide)
@@ -225,9 +227,9 @@ To add additional remote:
 git add remote <name> <url>
 ```
 Additional remote operations:
+
 ```
 git remote --help
-
 ```
 
 [item]: # (/slide)
@@ -286,9 +288,6 @@ If the commit is in a non-default branch, the issue will remain open and the iss
 
 For more information and similar tips see [https://help.github.com/articles/closing-issues-via-commit-messages/]
 
-[item]: # (slide)
-
-
 
 README Standards and Expectations
 ----------------------------------
@@ -308,7 +307,6 @@ as providing the reader with an overview of how to effectively utilize the proje
 * dashes under the headers
 * indent using whitespace (0x20) not tab
 
-[item]: # (/slide)
 
 [item]: # (slide)
 
