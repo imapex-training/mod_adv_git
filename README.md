@@ -357,7 +357,13 @@ file. As you are now going to be contributing to the project - this is obviously
    git clone https://github.com/<your_git_id>/101-github-lab
    ```
 
-4. Create and checkout a new branch for your enhancement
+4. Now that we have cloned that repo down to our local environment, we will be working directly in that environment for the rest of the exercise. In order to do that, we need to change directory to the local repository.
+
+	```
+   cd 101-github-lab
+   ```
+
+4. Now that we are in that directory, we can now create and checkout a new branch in your local repo to start working on your enhancement
 
 	```
    git branch -m adding-email-addr
