@@ -4,6 +4,18 @@ https://rawgit.com/imapex-training/mod_adv_git/master/slides/index.html#/
 
 [item]: # (slide)
 
+![](http://imapex.io/images/imapex_standing_text_sm.png)
+
+# Module: Advanced Git and GitHub
+
+[item]: # (/slide)
+
+## Abstract
+
+Properly leveraging and navigating source control is critical to any developer working in a "modern" fashion.  Though there are many alternatives, git and GitHub remain the most popular and leveraged platforms for developers today.  Moving beyond the basics of repository creation, cloning, commiting and pushing can feel like learning an entirely new language.  However, successfully collaborating on projects require a solid skill set on branches, pull requests, issues, forking and managing remotes.  Not to mention how to react with the inevitable merge conflict.  We will cover all these topics and more in this hands-on module.  
+
+[item]: # (slide)
+
 ## Introduction
 
 This module will provide you with an introduction to some basic to intermediate github workflows.
