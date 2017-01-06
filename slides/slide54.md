@@ -1,12 +1,7 @@
 
-## Pull Requests
+* Execute `git reset --hard 4600bcecad83434ee50cf35e5697842e0f10faf0` to undo the changes.  **(Use your commit hash in the command)**
 
-Pull requests are the way of notifying others about changes that you've checked in and you want incorporated into the
-main project.  Pull requests can be issued from a forked repository, or from a branch within a single repository.
-
-* notify others of your changes
-* request that they "pull" those changes into their work and merge them
-* issued from:
-  * forked repository
-  * branches in the same repository
+```
+HEAD is now at 4600bce Create second.txt from web
+```
 

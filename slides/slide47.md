@@ -1,14 +1,15 @@
 
-## Branches
+### `git log`
 
-* Used to develop features
-* isolate changes
-* repos maintain a default branch, usually master
-* can be merged into other branches
-Create a new branch:
 ```
-git branch -m mynewfeature
-```
+$ git log -h
+usage: git log [<options>] [<revision-range>] [[--] <path>...]
+   or: git show [<options>] <object>...
 
-![branch](img/branch.png)
+    -q, --quiet           suppress diff output
+    --source              show source
+    --use-mailmap         Use mail map file
+    --decorate[=...]      decorate options
+    -L <n,m:file>         Process line range n,m in file, counting from 1
+```
 

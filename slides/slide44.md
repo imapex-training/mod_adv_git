@@ -1,15 +1,15 @@
-## Other commands to try
 
-Show commit info + files that changed
+* Changes staged
+
 ```
-git log --stat
-```
-A single line view of each commit
-```
-git log --pretty=oneline
-```
-To compare two commits
-```
-git diff commit1 commit2
+# Output
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   first.txt
 ```
 

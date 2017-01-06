@@ -1,18 +1,10 @@
-## Tags
 
-* reference to a specific commit
-* human friendly
-* typically used for managing releases
-Show Tags:
+* Locally Repository ahead of Remote Repository
+
 ```
-git tag
-```
-Create a new tag:
-```
-git tag -a v1.0 -m "version 1.0 release"
-```
-Tag a previous commit:
-```
-git tag -a v1.2 9fcd202
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
 ```
 

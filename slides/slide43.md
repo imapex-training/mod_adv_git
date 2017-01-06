@@ -1,17 +1,21 @@
-## "Checkout"
-The ability to move your current working directory to a point in time.
 
-This is a point in time in time at a particular branch.
+#### Some examples we've seen
 
-To see the git history you can use:
+* Untracked Files 
 
 ```
-git log
-```
+$ git status
 
-To work on the code from a specific point in time
+# Output
+On branch master
 
-```
-git checkout <COMMIT>
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	first.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
 ```
 

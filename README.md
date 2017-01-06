@@ -616,16 +616,713 @@ This is a new file.
 [item]: # (/slide)
 
 
+[item]: # (slide)
+
 ## Handy Git Commands
 
+* `git status`
+* `git log`
+* `git diff`
+* `git reset`
 
+[item]: # (/slide)
 
+[item]: # (slide)
+
+### `git status` 
+
+```
+$ git status -h
+
+usage: git status [<options>] [--] <pathspec>...
+
+    -v, --verbose         be verbose
+    -s, --short           show status concisely
+    -b, --branch          show branch information
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --ignored             show ignored files
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules, optional when: all, dirty, untracked. (Default: all)
+    --column[=<style>]    list untracked files in columns
+```
+
+[item]: # (/slide)
+
+`git status` is used to check the current status of the working environment compared to the local and remote repositories.  
+
+[item]: # (slide)
+
+#### Some examples we've seen
+
+* Untracked Files 
+
+```
+$ git status
+
+# Output
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	first.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+[item]: # (/slide)
+
+Untracked Files indicate files that exist in the working directory, but have not been `git add`ed yet.  
+
+[item]: # (slide)
+
+* Changes staged
+
+```
+# Output
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   first.txt
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Locally Repository ahead of Remote Repository
+
+```
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Local and Remote Repostiries in sync 
+
+```
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+### `git log`
+
+```
+$ git log -h
+usage: git log [<options>] [<revision-range>] [[--] <path>...]
+   or: git show [<options>] <object>...
+
+    -q, --quiet           suppress diff output
+    --source              show source
+    --use-mailmap         Use mail map file
+    --decorate[=...]      decorate options
+    -L <n,m:file>         Process line range n,m in file, counting from 1
+```
+
+[item]: # (/slide)
+
+`git log` displays the commit history.  
+
+[item]: # (slide)
+
+* Execute `git log` 
+
+```
+commit 4600bcecad83434ee50cf35e5697842e0f10faf0
+Author: Hank Preston <hank.preston@gmail.com>
+Date:   Thu Jan 5 14:56:40 2017 -0500
+
+    Create second.txt from web
+
+commit fdb6a077bfa19495d3238589b8c89a72cca0a24e
+Author: Hank Preston <hank.preston@gmail.com>
+Date:   Thu Jan 5 14:39:25 2017 -0500
+
+    Add inspirational quote.
+
+commit 85bd49a1dce5983a7128f489f43cfc510ffad2f3
+Author: Hank Preston <hank.preston@gmail.com>
+Date:   Thu Jan 5 14:03:34 2017 -0500
+
+    first commit
+```
+
+[item]: # (/slide)
+
+#### Sidebar: Short hash vs. full hash
+
+In our previous step, we looked at the commit has that git presented to us: `7be53cc`.  You should notice that `7be53cc` is the first 7 characters of the full commit hash above: `7be53cc330db1207c9b26fe560704f90405742fd`.
+
+[item]: # (slide)
+
+### `git diff`
+
+```
+$ git diff -h
+usage: git diff [<options>] [<commit> [<commit>]] [--] [<path>...]
+```
+
+[item]: # (/slide)
+
+`git diff` describes the changes from one commit to another.  Provide either the long or short hash to specify specific commits, with the first commit being the "starting point" you are interested in.  
+
+If you do NOT specify commits, the command shows differences between the last commit and the current working copy.  
+
+[item]: # (slide)
+
+* Pick two of your listed commits and run `git diff` on them.  
+
+```
+$ git diff 85bd49a1dce5983a7128f489f43cfc510ffad2f3 fdb6a077bfa19495d3238589b8c89a72cca0a24e
+
+diff --git a/first.txt b/first.txt
+new file mode 100644
+index 0000000..d4425d9
+--- /dev/null
++++ b/first.txt
+@@ -0,0 +1 @@
++Our best thoughts came from others.
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+### `git reset`
+
+```
+$ git reset -h
+
+usage: git reset [--mixed | --soft | --hard | --merge | --keep] [-q] [<commit>]
+   or: git reset [-q] <tree-ish> [--] <paths>...
+   or: git reset --patch [<tree-ish>] [--] [<paths>...]
+
+    -q, --quiet           be quiet, only report errors
+    --mixed               reset HEAD and index
+    --soft                reset only HEAD
+    --hard                reset HEAD, index and working tree
+    --merge               reset HEAD, index and working tree
+    --keep                reset HEAD but keep local changes
+    -p, --patch           select hunks interactively
+    -N, --intent-to-add   record only the fact that removed paths will be added later
+```
+
+[item]: # (/slide)
+
+Occasionally you may find yourself having done some coding that didn't really work out how you hoped.  Or you may mistakenly delete something that you wish you hadn't.  If you are following the "commit early, commit often" mantra, this doesn't have to be a big deal.  
+
+`git reset` enables you to go back in time to a particular commit, immediately wiping out any changes you've made.  There are a whole lot of options available, but we'll look at the one that does a "hard" reset.  
+
+[item]: # (slide)
+
+* Open up `first.txt` and add the line `This is all a mistake.`  To the end.  
+
+```
+$ cat first.txt
+
+Our best thoughts came from others.
+This is all a mistake.
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Use `git status` to verify that the file has been modified.
+
+```
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   first.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Use `git log` to find the hash of your most recent commit
+
+```
+commit 4600bcecad83434ee50cf35e5697842e0f10faf0
+Author: Hank Preston <hank.preston@gmail.com>
+Date:   Thu Jan 5 14:56:40 2017 -0500
+
+    Create second.txt from web
+```
+
+[item]: # (slide)
+
+* Execute `git reset --hard 4600bcecad83434ee50cf35e5697842e0f10faf0` to undo the changes.  **(Use your commit hash in the command)**
+
+```
+HEAD is now at 4600bce Create second.txt from web
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Verify the changes are gone
+
+```
+$ cat first.txt
+
+Our best thoughts came from others.
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
 
 ## Branches and More
 
+* `git branch`
+* `git merge`
+* `git stash`
+* `git tag`
 
+[item]: # (/slide)
 
+In this section we'll look at some of the options available for not breaking working code.  Or in other words, how developers can work on new features, fix bugs, or experiment in a low risk fashion.  
 
+[item]: # (slide)
+
+## Code Branches 
+
+* Used to develop features
+* isolate changes
+* repos maintain a default branch, usually master
+* can be merged into other branches
+
+[item]: # (/slide)
+
+Let's say you have a new feature that you're working on.  You might have to refactor some of your code, and you want to be able to checkin your changes as you make progress.  However, you don't want to box yourself in a corner and prevent easy changes to your production code.  In order to manage this type of situation, you need to isolate your changes, and so you should use `git` branching.
+
+[item]: # (slide)
+
+### `git branch <branch name>` 
+
+```
+$ git branch -h
+
+usage: git branch [<options>] [-r | -a] [--merged | --no-merged]
+   or: git branch [<options>] [-l] [-f] <branch-name> [<start-point>]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+   or: git branch [<options>] [-r | -a] [--points-at]
+
+Generic options
+    -v, --verbose         show hash and subject, give twice for upstream branch
+    -q, --quiet           suppress informational messages
+    -t, --track           set up tracking mode (see git-pull(1))
+    --set-upstream        change upstream info
+    -u, --set-upstream-to <upstream>
+                          change the upstream info
+    --unset-upstream      Unset the upstream info
+    --color[=<when>]      use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --abbrev[=<n>]        use <n> digits to display SHA-1s
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --delete          delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --move            move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    --list                list branch names
+    -l, --create-reflog   create the branch's reflog
+    --edit-description    edit the description for the branch
+    -f, --force           force creation, move/rename, deletion
+    --merged <commit>     print only branches that are merged
+    --no-merged <commit>  print only branches that are not merged
+    --column[=<style>]    list branches in columns
+    --sort <key>          field name to sort on
+    --points-at <object>  print only branches of the object
+```
+
+[item]: # (/slide)
+
+What that does is to allow you to make changes in an area that won't affect the `master` branch.  One convention in `git` is that the main branch is typically named `master`.
+
+Now you're basically operating in a parallel universe until you merge your changes back into `master`.
+
+[item]: # (slide)
+
+* Create a new branch called "shakespeare"
+
+```
+git branch shakespeare
+git branch
+```
+```
+# Output
+* master
+  shakespeare
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Now, you need to switch to your branch.
+
+```
+git checkout shakespeare
+```
+```
+# Output 
+Switched to branch 'shakespeare'
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* You can shorten this into a single command with the `-b` flag for `git checkout`
+
+```
+git checkout -b chaucer
+git branch
+```
+```
+# Output #1
+Switched to a new branch 'chaucer'
+```
+```
+# Output #2
+* chaucer
+  master
+  shakespeare
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* We didn't really want a chaucer branch though, switch back to shakespeare and delete chaucer
+
+```
+git checkout shakespeare
+git branch -d chaucer
+git branch
+```
+```
+# Output #1
+Switched to branch 'shakespeare'
+```
+```
+# Output #2
+Deleted branch chaucer (was 4600bce).
+```
+```
+# Output #3
+  master
+* shakespeare
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Add some text to your `first.txt` with some text from Shakespeare.  `To be or not to be, that is the question!`
+
+```
+$ cat first.txt
+
+Our best thoughts came from others.
+To be or not to be, that is the question!
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Complete your code change by adding and committing your change.  
+
+```
+git add first.txt
+git commit -m "Added To be or not to be"
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Push your new branch to GitHub
+
+```
+git push -u origin shakespeare
+```
+```
+# Output
+
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 389 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/hpreston/imapex-git
+ * [new branch]      shakespeare -> shakespeare
+Branch shakespeare set up to track remote branch shakespeare from origin.
+```
+
+[item]: # (/slide)
+
+The first time you push a new branch to GitHub you need to use the option `-u` to "set-upstream" for the branch.  What the command says is "Please push the current working branch up to the remote I call 'origin' and create a new branch there called 'shakespeare'".  
+
+It is important to understand that though it is good practice, it is **not** required that the name of a branch be the same in local and remote repositories.  If you were to use a command like `git push -u origin bob`, you would create a new branch in the GitHub instance of the repository called "bob" that was linked with yoru local branch called "shakespeare".  
+
+Where this typically becomes a problem is if you use the command `git push -u origin master` from within a branch.  This will result in your local branch being linked to the `master` branch on GitHub.  Not something every done intentionally.  
+
+[item]: # (slide)
+
+* Take a look at `.git/config` to see what this linkage looks like.  
+
+```
+$ cat .git/config
+
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = https://github.com/hpreston/imapex-git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[branch "shakespeare"]
+	remote = origin
+	merge = refs/heads/shakespeare
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Add another quote to `first.txt`.  This time add "Out, damned spot! Out, I say!"
+* Add and Commit this change as well.  
+
+```
+git add first.txt
+git commit -m "Added Lady Macbeth Quote."
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Push this change to GitHub, but this time you can just use `git push` without the option.  
+
+```
+$ git push 
+
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 413 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/hpreston/imapex-git
+   53c1785..3bf82d8  shakespeare -> shakespeare
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Change back to master
+
+```
+git checkout master
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Verify that the new change does **not** exist in the master branch
+
+```
+$ cat first.txt
+
+Our best thoughts came from others.
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+### `git merge` 
+
+```
+$ git merge -h
+usage: git merge [<options>] [<commit>...]
+   or: git merge [<options>] <msg> HEAD <commit>
+   or: git merge --abort
+
+    -n                    do not show a diffstat at the end of the merge
+    --stat                show a diffstat at the end of the merge
+    --summary             (synonym to --stat)
+    --log[=<n>]           add (at most <n>) entries from shortlog to merge commit message
+    --squash              create a single commit instead of doing a merge
+    --commit              perform a commit if the merge succeeds (default)
+    -e, --edit            edit message before committing
+    --ff                  allow fast-forward (default)
+    --ff-only             abort if fast-forward is not possible
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --verify-signatures   verify that the named commit has a valid GPG signature
+    -s, --strategy <strategy>
+                          merge strategy to use
+    -X, --strategy-option <option=value>
+                          option for selected merge strategy
+    -m, --message <message>
+                          merge commit message (for a non-fast-forward merge)
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --abort               abort the current in-progress merge
+    --allow-unrelated-histories
+                          allow merging unrelated histories
+    --progress            force progress reporting
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+    --overwrite-ignore    update ignored files (default)
+```
+
+[item]: # (/slide)
+
+With `git merge` you can add commits from one branch into another branch.  This is typically done as part of integration testing, and when the time comes to incorporate new features or fixes into the main "master" branch.  
+
+[item]: # (slide)
+
+### `git merge` in asci art
+
+```
+	  A---B---C feature
+	 /         \
+ D---E---F---G---H master
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Merge the shakespeare branch into master 
+
+```
+git merge shakespeare
+```
+```
+# Output
+Updating 4600bce..3bf82d8
+Fast-forward
+ first.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Verify the updates were made to `first.txt`
+
+```
+$ cat first.txt
+
+Our best thoughts came from others.
+To be or not to be, that is the question!
+Out, damned spot! Out, I say!
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* With the changes merged in, delete the branch
+
+```
+git branch -d shakespeare
+```
+```
+# Output
+
+Deleted branch shakespeare (was 3bf82d8).
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Push your changes up to GitHub
+
+```
+git push
+```
+```
+# Output
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/hpreston/imapex-git
+   4600bce..3bf82d8  master -> master
+```
+
+[item]: # (/slide)
+
+Notice in the output that there is no reference to deleting the shakespeare branch on the remote.  
+
+[item]: # (slide)
+
+* Push the deleted branch change to GitHub
+
+```
+git push origin --delete shakespeare
+```
+```
+# Output
+
+To https://github.com/hpreston/imapex-git
+ - [deleted]         shakespeare
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+### Foreshadowing: Merge Conflicts
+
+[item]: # (/slide)
+
+It won't be long before you attempt a `git merge` and encounter the dreaded "merge conflict" alert.  This happens whenever two commits are making changes to the same part (ie line) of a file.  There is nothing wrong with two commits working on the same file, but if the same line has been edited this is not something git can automatically work through.  
+
+Though this can occur when working independently on a project, it is much more common when working collaboratively with others.  We will discuss and experiment with conflicts later in the lab when looking at collaborative development topics.  
 
 ## Forking and More
 

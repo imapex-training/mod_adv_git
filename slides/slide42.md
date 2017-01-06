@@ -1,8 +1,22 @@
-## Basic Refresher
 
-There are three states in a github repo.
+### `git status` 
 
-* Modified - any files that you have modified in your working directory
-* Staged - a snapshot of files, ready to be commited
-* Commited - permentantly stored in your git repository
+```
+$ git status -h
+
+usage: git status [<options>] [--] <pathspec>...
+
+    -v, --verbose         be verbose
+    -s, --short           show status concisely
+    -b, --branch          show branch information
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --ignored             show ignored files
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules, optional when: all, dirty, untracked. (Default: all)
+    --column[=<style>]    list untracked files in columns
+```
 
