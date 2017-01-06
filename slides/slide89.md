@@ -1,7 +1,9 @@
-## Rebase
 
-* another way to merge changes between branches
-* apply all commits from one branch to another
-* syncing changes to a a feature branch
+* *Review* Now merge the new lincoln branch to master 
 
+```
+git checkout master
+git merge lincoln
+git push
+```
 

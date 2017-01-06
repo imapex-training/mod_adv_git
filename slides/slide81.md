@@ -1,17 +1,7 @@
-## "Checkout"
-The ability to move your current working directory to a point in time.
 
-This is a point in time in time at a particular branch.
-
-To see the git history you can use:
+* Create and checkout a new branch called lincoln
 
 ```
-git log
-```
-
-To work on the code from a specific point in time
-
-```
-git checkout <COMMIT>
+git checkout -b lincoln
 ```
 

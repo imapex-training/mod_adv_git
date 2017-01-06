@@ -1,10 +1,17 @@
-## HEAD
 
-* The latest commit in a particular branch.
-* used as a reference when checking out a particular branch
+* Switch back to the master branch
 
-You can see what the latest commit is with
 ```
-cat .git/HEAD
+git checkout master
+```
+
+* Add "ca 1820-1840" to the end of the first line in `first.txt`
+
+```
+$ cat first.txt
+
+Our best thoughts came from others. ca 1820-1840
+To be or not to be, that is the question!
+Out, damned spot! Out, I say!
 ```
 

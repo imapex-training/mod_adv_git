@@ -1,12 +1,10 @@
+## HEAD
 
-## Sample Workflow
+* The latest commit in a particular branch.
+* used as a reference when checking out a particular branch
 
-1. Fork an existing repository
-2. Clone your fork
-3. Add 'upstream' remote
-4. Create a feature branch
-5. develop cool feature
-6. incorporate any upstream changes to your fork / branch
-7. merge your feature branch
-8. Open pull request to existing repostiory
+You can see what the latest commit is with
+```
+cat .git/HEAD
+```
 

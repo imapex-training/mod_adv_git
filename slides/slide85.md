@@ -1,14 +1,15 @@
 
-## Branches
+* Add, Commit, and Push the changes to master
 
-* Used to develop features
-* isolate changes
-* repos maintain a default branch, usually master
-* can be merged into other branches
-Create a new branch:
 ```
-git branch -m mynewfeature
+git add first.txt
+git commit -m "Added date to Emerson Quote"
+git push
 ```
 
-![branch](img/branch.png)
+* Checkout the lincoln branch again
+
+```
+git checkout lincoln
+```
 

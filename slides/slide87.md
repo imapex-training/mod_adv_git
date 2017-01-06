@@ -1,24 +1,12 @@
-## Stashing
 
-* moves changes out of the staging area temporarily
-* useful when navigating between branches
-* create a tempory "stash" of **staged** files
-* apply them to another branch
+* Verify the changes are returned
 
-Stash Changes:
 ```
-git stash
-```
+$ cat first.txt
 
-Unstash Changes:
+Our best thoughts came from others. ca 1820-1840
+To be or not to be, that is the question!
+Out, damned spot! Out, I say!
+Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
 ```
-git stash apply
-```
-
-List Stashed changes:
-```
-git stash list
-```
-
-[Tell me more!!](https://git-scm.com/book/en/v1/Git-Tools-Stashing)
 

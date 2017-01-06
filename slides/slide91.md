@@ -1,7 +1,8 @@
-## Push
-Push your local changes to a remote:
-```
-git push <remote> <branch>
-```
-* when used w/ multiple remotes you can quickly work across branches and forks
+## Basic Refresher
+
+There are three states in a github repo.
+
+* Modified - any files that you have modified in your working directory
+* Staged - a snapshot of files, ready to be commited
+* Commited - permentantly stored in your git repository
 

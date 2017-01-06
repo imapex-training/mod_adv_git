@@ -1,8 +1,18 @@
+## Tags
 
-## Discussion Items for kickoff
-
-* Production deployments will be done from the master branch
-* All feature development should be done via the developers fork / branch
-* All feature development should have an open issue tagged enhancement for tracking purposes
-* All bug fixes should have an open issue for tracking purposes
+* reference to a specific commit
+* human friendly
+* typically used for managing releases
+Show Tags:
+```
+git tag
+```
+Create a new tag:
+```
+git tag -a v1.0 -m "version 1.0 release"
+```
+Tag a previous commit:
+```
+git tag -a v1.2 9fcd202
+```
 

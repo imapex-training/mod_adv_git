@@ -1,8 +1,16 @@
-## Basic Refresher
 
-There are three states in a github repo.
+### `git stash`
 
-* Modified - any files that you have modified in your working directory
-* Staged - a snapshot of files, ready to be commited
-* Commited - permentantly stored in your git repository
+```
+$ git stash -h
+
+usage: git stash list [<options>]
+   or: git stash show [<stash>]
+   or: git stash drop [-q|--quiet] [<stash>]
+   or: git stash ( pop | apply ) [--index] [-q|--quiet] [<stash>]
+   or: git stash branch <branchname> [<stash>]
+   or: git stash [save [--patch] [-k|--[no-]keep-index] [-q|--quiet]
+		       [-u|--include-untracked] [-a|--all] [<message>]]
+   or: git stash clear
+```
 

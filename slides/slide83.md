@@ -1,18 +1,14 @@
-## Tags
 
-* reference to a specific commit
-* human friendly
-* typically used for managing releases
-Show Tags:
+* Imagine your manager comes over and insists you make a change **immediately** to add a date to the first quote.  You aren't ready to commit your changes, but don't want to loose them either.  
+* "Stash" your active changes so you can come back to them later.  
+
 ```
-git tag
+git stash
 ```
-Create a new tag:
 ```
-git tag -a v1.0 -m "version 1.0 release"
-```
-Tag a previous commit:
-```
-git tag -a v1.2 9fcd202
+# Output
+
+Saved working directory and index state WIP on lincoln: 3bf82d8 Added Lady Macbeth Quote.
+HEAD is now at 3bf82d8 Added Lady Macbeth Quote.
 ```
 

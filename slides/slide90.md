@@ -1,21 +1,13 @@
-## Remotes
 
-A git repo may have many copies in various locations called remotes:
+## Introduction
 
-* URL reference to other copies of the repository
-* most commonly github
-* `origin` - automatically created remote when a repo is cloned
-To view remotes configuration
-```
-cat .git/config
-```
-To add additional remote:
-```
-git add remote <name> <url>
-```
-Additional remote operations:
+This module will provide you with an introduction to some basic to intermediate github workflows.
 
-```
-git remote --help
-```
+It is assumed that you already have a basic understanding of:
+
+* What git is
+* When/why you would use it
+
+
+The official tutorial for Github is a useful resource and can be find [Here](https://guides.github.com/activities/hello-world/)
 

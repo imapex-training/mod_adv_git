@@ -1,15 +1,14 @@
-## Other commands to try
 
-Show commit info + files that changed
+* Add the following text to the `first.txt` file
+
+    > Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
+    
 ```
-git log --stat
-```
-A single line view of each commit
-```
-git log --pretty=oneline
-```
-To compare two commits
-```
-git diff commit1 commit2
-```
+$ cat first.txt
+
+Our best thoughts came from others.
+To be or not to be, that is the question!
+Out, damned spot! Out, I say!
+Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
+```    
 
