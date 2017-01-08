@@ -1,27 +1,21 @@
-## Merge
 
-* incorporate changes between branches
-
+* Re-apply the stashed changes
 
 ```
-	  A---B---C feature
-	 /
- D---E---F---G master
+git stash pop
 ```
+```
+# Output
 
-```
-git checkout master
-git merge feature
-```
+Auto-merging first.txt
+On branch lincoln
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
-```
-	  A---B---C feature
-	 /         \
- D---E---F---G---H master
-```
-To undo a merge that has conflicts:
-```
-git merge --abort
-```
+	modified:   first.txt
 
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (286ce79fbaf4d0f0f4b5032d356aea6b1aa1b914)
+```
 

@@ -1,17 +1,8 @@
-## "Checkout"
-The ability to move your current working directory to a point in time.
 
-This is a point in time in time at a particular branch.
+## Stashing
 
-To see the git history you can use:
-
-```
-git log
-```
-
-To work on the code from a specific point in time
-
-```
-git checkout <COMMIT>
-```
+* moves changes out of the staging area temporarily
+* useful when navigating between branches
+* create a tempory "stash" of **staged** files
+* apply them to another branch
 

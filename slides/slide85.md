@@ -1,15 +1,14 @@
 
-* Add, Commit, and Push the changes to master
+* Merge **example** into master
 
 ```
-git add first.txt
-git commit -m "Added date to Emerson Quote"
-git push
+git merge example
 ```
-
-* Checkout the lincoln branch again
-
 ```
-git checkout lincoln
+# Output
+
+Auto-merging first.txt
+CONFLICT (content): Merge conflict in first.txt
+Automatic merge failed; fix conflicts and then commit the result.
 ```
 

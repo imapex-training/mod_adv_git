@@ -1,8 +1,9 @@
 
-## Stashing
+***We are going to purposely casue a conflict so we can fix it!***
 
-* moves changes out of the staging area temporarily
-* useful when navigating between branches
-* create a tempory "stash" of **staged** files
-* apply them to another branch
+* Create and checkout a new branch called "example"
+
+```
+git checkout -b example
+```
 

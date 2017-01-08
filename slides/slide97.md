@@ -1,11 +1,17 @@
-## Forking
 
-* a copy of a repository
-* make changes w/o impacting source repo
-* long lived
-  * a new project based on existing work
-* short lived
-  * proposing changes to someone elses repo
+* Switch back to the master branch
 
-[Tell me more!!](https://help.github.com/articles/working-with-forks/)
+```
+git checkout master
+```
+
+* Add "ca 1820-1840" to the end of the first line in `first.txt`
+
+```
+$ cat first.txt
+
+Our best thoughts came from others. ca 1820-1840
+To be or not to be, that is the question! - Hamlet
+Out, damned spot! Out, I say!
+```
 

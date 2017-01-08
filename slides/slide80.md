@@ -1,16 +1,11 @@
 
-### `git stash`
+* Add "-Hamlet" to the end of the second quote
 
 ```
-$ git stash -h
+$ cat first.txt
 
-usage: git stash list [<options>]
-   or: git stash show [<stash>]
-   or: git stash drop [-q|--quiet] [<stash>]
-   or: git stash ( pop | apply ) [--index] [-q|--quiet] [<stash>]
-   or: git stash branch <branchname> [<stash>]
-   or: git stash [save [--patch] [-k|--[no-]keep-index] [-q|--quiet]
-		       [-u|--include-untracked] [-a|--all] [<message>]]
-   or: git stash clear
+Our best thoughts came from others.
+To be or not to be, that is the question! -Hamlet
+Out, damned spot! Out, I say!
 ```
 

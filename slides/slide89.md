@@ -1,9 +1,13 @@
 
-* *Review* Now merge the new lincoln branch to master 
+* Commit the change to finalze the merge
 
 ```
-git checkout master
-git merge lincoln
-git push
+git add first.txt 
+git commit -m "Manual merge of Hamlet"
+```
+```
+# Output 
+
+[master be5499b] Manual merge of Hamlet
 ```
 

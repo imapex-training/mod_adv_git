@@ -1,13 +1,10 @@
 
-## Issues / Milestones / Labels
+## Forking
 
-Issues are an important collaboration tool within github
-
-Issues allow you to
-* Keep track of bugfixes
-* Track enhancements
-* Provide a forum for discussion about your code
-  * supports github flavored markdown for references to PR's, code, mentions, etc
-
-Asignment, Milestones and Labels allow you to organize issues in a meaningful way
+* a copy of a repository
+* make changes w/o impacting source repo
+* long lived
+  * a new project based on existing work
+* short lived
+  * proposing changes to someone elses repo
 

@@ -1,12 +1,13 @@
 
-* Verify the changes are returned
-
-```
-$ cat first.txt
-
-Our best thoughts came from others. ca 1820-1840
-To be or not to be, that is the question!
-Out, damned spot! Out, I say!
-Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
-```
+* When a merge conflict occurs, git uses these indicators to surround the conflict
+    * `<<<<<<< HEAD` 
+        * Inserted a line before the point of the conflict
+        * What follows is the version of the source file
+    * `=======`
+        * Inserted at the end of the point of conflict 
+        * *A conflict could be 1 or more lines of code/text*
+        * What follows is the version being **merged** into the source file
+    * `>>>>>>> example `
+        * Inserted after the point of the conflict
+        * After the `>>>>>>>` the name of the branch is listed 
 

@@ -1,21 +1,15 @@
 
-* Re-apply the stashed changes
+* Take a look at the contents of `first.txt`
 
 ```
-git stash pop
-```
-```
-# Output
+$ cat first.txt
 
-Auto-merging first.txt
-On branch lincoln
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   first.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-Dropped refs/stash@{0} (286ce79fbaf4d0f0f4b5032d356aea6b1aa1b914)
+Our best thoughts came from others.
+<<<<<<< HEAD
+To be or not to be, that is the question! -Hammlet
+=======
+To be or not to be, that is the question! -Hamlet
+>>>>>>> example
+Out, damned spot! Out, I say!
 ```
 

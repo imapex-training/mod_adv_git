@@ -1315,13 +1315,198 @@ To https://github.com/hpreston/imapex-git
 
 [item]: # (slide)
 
-### Foreshadowing: Merge Conflicts
+### Merge Conflicts
 
 [item]: # (/slide)
 
 It won't be long before you attempt a `git merge` and encounter the dreaded "merge conflict" alert.  This happens whenever two commits are making changes to the same part (ie line) of a file.  There is nothing wrong with two commits working on the same file, but if the same line has been edited this is not something git can automatically work through.  
 
-Though this can occur when working independently on a project, it is much more common when working collaboratively with others.  We will discuss and experiment with conflicts later in the lab when looking at collaborative development topics.  
+Though this can occur when working independently on a project, it is much more common when working collaboratively with others.  The method the developer resolves a merge conflict is the same whether you cause the conflict on your own, or if you and another developer were working on the same code.  
+
+[item]: # (slide)
+
+***We are going to purposely casue a conflict so we can fix it!***
+
+* Create and checkout a new branch called "example"
+
+```
+git checkout -b example
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Add "-Hamlet" to the end of the second quote
+
+```
+$ cat first.txt
+
+Our best thoughts came from others.
+To be or not to be, that is the question! -Hamlet
+Out, damned spot! Out, I say!
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Add and Commit the change
+
+```
+git add first.txt
+git commit -m "Added -Hamlet to quote"
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Checkout "master" and verify that "-Hamlet" doesn't exist
+
+```
+git checkout master
+cat first.txt
+```
+```
+# Output
+Our best thoughts came from others.
+To be or not to be, that is the question!
+Out, damned spot! Out, I say!
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Add "-Hammlet" to the end of the second quote
+
+```
+$ cat first.txt
+
+Our best thoughts came from others.
+To be or not to be, that is the question! -Hammlet
+Out, damned spot! Out, I say!
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Add and Commit the change
+
+```
+git add first.txt
+git commit -m "Added -Hammlet to quote"
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Merge **example** into master
+
+```
+git merge example
+```
+```
+# Output
+
+Auto-merging first.txt
+CONFLICT (content): Merge conflict in first.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+[item]: # (/slide)
+
+The message says it all... The "Automatic merge failed"... so we need to do it ourselves.  
+
+[item]: # (slide)
+
+* Take a look at the contents of `first.txt`
+
+```
+$ cat first.txt
+
+Our best thoughts came from others.
+<<<<<<< HEAD
+To be or not to be, that is the question! -Hammlet
+=======
+To be or not to be, that is the question! -Hamlet
+>>>>>>> example
+Out, damned spot! Out, I say!
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* When a merge conflict occurs, git uses these indicators to surround the conflict
+    * `<<<<<<< HEAD` 
+        * Inserted a line before the point of the conflict
+        * What follows is the version of the source file
+    * `=======`
+        * Inserted at the end of the point of conflict 
+        * *A conflict could be 1 or more lines of code/text*
+        * What follows is the version being **merged** into the source file
+    * `>>>>>>> example `
+        * Inserted after the point of the conflict
+        * After the `>>>>>>>` the name of the branch is listed 
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* To resolve the conflict, open `first.txt` and delete the conflict indicator lines, and save the version with Hamlet spelled correctly.  
+
+```
+$ cat first.txt
+
+Our best thoughts came from others.
+To be or not to be, that is the question! -Hamlet
+Out, damned spot! Out, I say!
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Commit the change to finalze the merge
+
+```
+git add first.txt 
+git commit -m "Manual merge of Hamlet"
+```
+```
+# Output 
+
+[master be5499b] Manual merge of Hamlet
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Push the changes up to GitHub
+
+```
+git push
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+#### Merge Notes
+
+* If you decide you do NOT want to complete the merge, you can run `git merge --abort` instead
+* Many IDEs provide graphical interfaces for resolving merge conflicts that simplify the process
+* Some merge conflicts can result in many instances of conflicting lines across multiple files
+    * The same process is used to resolve, but it can be more complicated 
+    * In cases like these, rather than merging into `master` directly, an integration branch can be safer 
+    * Keeping commits and feature branches small is a good to try to limit these cases
+
+[item]: # (/slide)
 
 [item]: # (slide)
 
@@ -1375,7 +1560,7 @@ git checkout -b lincoln
 $ cat first.txt
 
 Our best thoughts came from others.
-To be or not to be, that is the question!
+To be or not to be, that is the question! - Hamlet
 Out, damned spot! Out, I say!
 Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
 ```    
@@ -1413,7 +1598,7 @@ git checkout master
 $ cat first.txt
 
 Our best thoughts came from others. ca 1820-1840
-To be or not to be, that is the question!
+To be or not to be, that is the question! - Hamlet
 Out, damned spot! Out, I say!
 ```
 
@@ -1469,7 +1654,7 @@ Dropped refs/stash@{0} (286ce79fbaf4d0f0f4b5032d356aea6b1aa1b914)
 $ cat first.txt
 
 Our best thoughts came from others. ca 1820-1840
-To be or not to be, that is the question!
+To be or not to be, that is the question! - Hamlet
 Out, damned spot! Out, I say!
 Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
 ```
@@ -1520,8 +1705,33 @@ git push
 * Forking a Repository
 * Using GitHub Issues
 * Issuing Pull Requests
+* Managing Upstream Remotes
 
 [item]: # (/slide)
+
+In this section we'll look at the basics of working with someone else's code.  We'll talk about:  
+
+* Using "forks" to use another repository as a starting point for a project.  
+* How you can file issues against a repository if you find a bug or have a feature request.  
+* Explore how the Pull Request provides a developer the abiltity to contribute code to another person's project
+* Linking your local repository to multiple remote repositories to stay in sync with upstream changes
+
+[item]: # (slide)
+
+## Forking
+
+* a copy of a repository
+* make changes w/o impacting source repo
+* long lived
+  * a new project based on existing work
+* short lived
+  * proposing changes to someone elses repo
+
+[item]: # (/slide)
+
+Forking and Branching are mechanisms used by Git to diverge from the main code line for feature development, or bug fixes. Branches are seperate trains within the same repository, whereas a fork, creates a copy of the entire repository in a different location (user account). From the perspective of a single developer the two are very similar, however, it is important to consider what other developers are doing relative to the project. The fork based workflow is dominant in opensource projects as contributors likely would not have access to push code to the main repository.
+
+For more information see this [Stack Overflow Post](http://stackoverflow.com/questions/3611256/forking-vs-branching-in-github)
 
 
 

@@ -1,7 +1,8 @@
 
-* Create and checkout a new branch called lincoln
+* Add and Commit the change
 
 ```
-git checkout -b lincoln
+git add first.txt
+git commit -m "Added -Hamlet to quote"
 ```
 

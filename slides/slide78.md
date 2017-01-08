@@ -1,3 +1,3 @@
 
-### Foreshadowing: Merge Conflicts
+### Merge Conflicts
 

@@ -1,7 +1,9 @@
-## Push
-Push your local changes to a remote:
+
+* *Review* Now merge the new lincoln branch to master 
+
 ```
-git push <remote> <branch>
+git checkout master
+git merge lincoln
+git push
 ```
-* when used w/ multiple remotes you can quickly work across branches and forks
 

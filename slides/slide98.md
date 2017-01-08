@@ -1,24 +1,15 @@
-## Stashing
 
-* moves changes out of the staging area temporarily
-* useful when navigating between branches
-* create a tempory "stash" of **staged** files
-* apply them to another branch
+* Add, Commit, and Push the changes to master
 
-Stash Changes:
 ```
-git stash
+git add first.txt
+git commit -m "Added date to Emerson Quote"
+git push
 ```
 
-Unstash Changes:
-```
-git stash apply
-```
+* Checkout the lincoln branch again
 
-List Stashed changes:
 ```
-git stash list
+git checkout lincoln
 ```
-
-[Tell me more!!](https://git-scm.com/book/en/v1/Git-Tools-Stashing)
 
