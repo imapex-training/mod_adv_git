@@ -1,8 +1,8 @@
 
-## Discussion Items for kickoff
+**For this lab, we'll be leaving our quotes repository behind and moving to a new one**
 
-* Production deployments will be done from the master branch
-* All feature development should be done via the developers fork / branch
-* All feature development should have an open issue tagged enhancement for tracking purposes
-* All bug fixes should have an open issue for tracking purposes
+* Navigate to [github.com/imapex-training/101-github-lab](https://github.com/imapex-training/101-github-lab)
+* Click the **Fork** button
+
+![](images/github-fork1.jpg)
 

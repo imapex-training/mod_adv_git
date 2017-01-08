@@ -1733,7 +1733,273 @@ Forking and Branching are mechanisms used by Git to diverge from the main code l
 
 For more information see this [Stack Overflow Post](http://stackoverflow.com/questions/3611256/forking-vs-branching-in-github)
 
+[item]: # (slide)
 
+**For this lab, we'll be leaving our quotes repository behind and moving to a new one**
+
+* Navigate to [github.com/imapex-training/101-github-lab](https://github.com/imapex-training/101-github-lab)
+* Click the **Fork** button
+
+![](images/github-fork1.jpg)
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* ***If you are a member of organizations, be sure to select your own GitHub Account***
+
+![](images/github-fork2.jpg)
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* After a few seconds you'll have your own copy of the repostiory on GitHub
+
+![](images/github-fork3.jpg)
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Clone the repository locally to your workstation
+* **Be sure to clone YOUR repository, not `imapex-training` or the lab authors**
+
+```
+cd ~/coding
+git clone https://github.com/<YOUR GITHUB USER>/101-github-lab
+```
+```
+# Output
+
+Cloning into '101-github-lab'...
+remote: Counting objects: 27, done.
+remote: Total 27 (delta 0), reused 0 (delta 0), pack-reused 27
+Unpacking objects: 100% (27/27), done.
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Move into the new repository and verify you have a full local copy
+
+```
+cd 101-github-lab
+ls -la
+```
+```
+# Output 
+
+total 16
+drwxr-xr-x   5 hapresto  wheel   170 Jan  8 10:36 .
+drwxrwxrwt  33 root      wheel  1122 Jan  8 10:36 ..
+drwxr-xr-x  13 hapresto  wheel   442 Jan  8 10:36 .git
+-rw-r--r--   1 hapresto  wheel   173 Jan  8 10:36 CONTRIBUTORS.txt
+-rw-r--r--   1 hapresto  wheel    16 Jan  8 10:36 README.md
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Take a look at the `CONTRIBUTORS.txt` file
+
+```
+$ cat CONTRIBUTORS.txt
+
+John Smith - josmith@email.ex
+```
+
+[item]: # (/slide)
+
+This file lists all the names and emails of the project contributors.  As we'll be contributing, we need to get our name added.  
+
+[item]: # (slide)
+
+## GitHub Issues 
+
+* Keep track of bugfixes
+* Track enhancements
+* Provide a forum for discussion about your code
+  * supports github flavored markdown for references to PR's, code, mentions, etc
+* Asignment, Milestones and Labels allow you to organize issues in a meaningful way
+
+[item]: # (/slide)
+
+Issues are the primary vehicle by which feature enhancements and bug fixes are tracked.
+
+Labels are used to categorize the the issue. Examples of tags are enhancement, *bug*, *question*, *help wanted*.
+
+ A detailed explanation of Issues, Labels, and Milestones can be found [Here](https://guides.github.com/features/issues/)
+
+***TIP:*** 
+To close an issue in the same repository, use one of the keywords in the list below followed by a reference to the issue number in the commit message. For example, a commit message with `Fixes #45` will close issue 45 in that repository once the commit is merged into the default branch.
+
+If the commit is in a non-default branch, the issue will remain open and the issue will be referenced with a tooltip.
+
+For more information and similar tips see [help.github.com/articles/closing-issues-via-commit-messages/](https://help.github.com/articles/closing-issues-via-commit-messages/)
+
+[item]: # (slide)
+
+* Open an issue against [imapex-training/101-github-lab](https://github.com/imapex-training/101-github-lab) that your email is missing in the contributors file
+
+![](images/github-issue1.jpg)
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+![](images/github-issue2.jpg)
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* The owner of the repository where the issue has been filed can assign labels or people to the issue.  
+    * If you are completing this lab in a class, the proctor might assign **YOU** to fix your own issue :-)
+
+![](images/github-issue3.jpg)
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Anyone can open an issue on a repo
+* Anyone can comment on an issue
+* Only those with permission can add labels, make assignments, or close an issue
+    * Repository Owners
+    * Issue Opener
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+## Pull Requests
+
+* notify others of your changes
+* request that they "pull" those changes into their work and merge them
+* issued from:
+  * forked repository
+  * branches in the same repository
+
+[item]: # (/slide)
+
+Pull requests are the way of notifying others about changes that you've checked in and you want incorporated into the main project.  Pull requests can be issued from a forked repository, or from a branch within a single repository.
+
+[item]: # (slide)
+
+* Back in our local repository of our Fork, add yourself to the CONTRIBUTORS.txt file
+
+```
+$ cat CONTRIBUTORS.txt
+John Smith - josmith@email.ex
+Hank Preston - hapresto@cisco.com
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Add, commit and push the changes to GitHub
+
+```
+git add CONTRIBUTORS.txt
+git commit -m "Added Hank Preston to Contributors list"
+git push
+```
+```
+# Output 
+
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 359 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/hpreston/101-github-lab
+   bd5a5e0..f834af7  master -> master
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* On GitHub, you can see that your info is now listed in **YOUR** repository
+
+![](images/github-pr1.jpg)
+
+[item]: # (/slide)
+
+You have now written the code to fix the Issue you filed, but that code is only in your FORK of the repository, not the original repo.  We can ask that the Upstream repository "PULL" our changes into it by opening a "Pull Request"
+
+[item]: # (slide)
+
+* In GitHub in your repository, click the "New pull request" button
+
+![](images/github-pr2.jpg)
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* You'll be given a chance to view the changes, and then click "Create pull request"
+
+![](images/github-pr3.jpg)
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Remember, you can include key words and Issue numbers in the PR title to automatically link them together.  
+
+![](images/github-pr4.jpg)
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* After opening, you'll be taken back to the PR list on the upstream repository.  
+
+![](images/github-pr5.jpg)
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+### Pull Request Notes
+
+* Only owners of a repository can "Merge" the Pull Request into the code 
+* If your running this lab during a class, the proctor can do that if they wish 
+* However, multiple students submitting PRs at the same time, on the same file will likely cause merge conflicts that need to be addressed
+* Repository owners typically won't resolve conflicts like that themselves
+    * They will ask you to "rebase" your changes
+
+[item]: # (/slide)
+
+As a contributor to a project, you can open issues and pull requests, but it is up to the owner of the project to decide what to do with them.  On active projects, "merge conflicts" are quite likely, and often are the cause for extra work by the contributor of code.  
+
+What can often happen after submitting a Pull Request is: 
+
+1. Another PR that conflicts with your changes is merged into the repository
+2. This causes a conflict on your PR
+3. The repository owner will submit a comment on your PR asking you to "rebase" your changes
+
+This request means "Thanks for your submitted changes, we'd love to take a look, but before we can we need you to resubmit them against our current code base"
+
+[item]: # (slide)
+
+### What to do next... 
+
+* Update your respository with the "upstream" changes
+* Rebase your code changes
+* Potentially close the original PR and open a new PR
+
+[item]: # (/slide)
+
+## Syncing a Repository to multiple Remotes
+
+
+## Rebasing Code Changes    
 
 
 ## Working With Others
