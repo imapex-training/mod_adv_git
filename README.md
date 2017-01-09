@@ -2258,14 +2258,71 @@ git push
 
 [item]: # (/slide)
 
+[item]: # (slide)
 
+# Working With Others
 
+> You have your way. I have my way. As for the right way, the correct way, and the only way, it does not exist. ~ Friedrich Nietzsche
 
+[item]: # (/slide)
 
-## Working With Others
+There are many opinions on the "right" way to collaborate on development projects.  These typically relate to topics such as 
 
+* When to fork vs branch
+* Who should have access to the project repository
+* When to open issues
+* The significance of the "master" branch
+* And many other topics
 
+Like many topics, there is not true "right" way, however there are many opinions available.  Often these opinions were developed after many projects and scars from attempting something one way vs another.  
 
+And also like many lessons in life, sometimes you won't understand until you make the mistake yourself.  That said... 
+
+[item]: # (slide)
+
+## Some suggestions to consider
+
+* Production deployments will be done from the master branch
+* All feature development should be done via the developers fork and within a branch
+* All feature development should have an open issue tagged enhancement for tracking purposes
+* All bug fixes should have an open issue for tracking purposes
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+# Links
+
+* [https://git-scm.com](https://git-scm.com)
+* [https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
+* [https://help.github.com/categories/bootcamp/](https://help.github.com/categories/bootcamp/)
+* [https://cmatskas.com/delete-git-branch-locally-and-remotely/](https://cmatskas.com/delete-git-branch-locally-and-remotely/)
+* [https://www.sitepoint.com/quick-tip-synch-a-github-fork-via-the-command-line/](https://www.sitepoint.com/quick-tip-synch-a-github-fork-via-the-command-line/)
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+# Why do we care?
+
+[item]: # (/slide)
+
+It could be said that the number one skill you need as a modern developer is how to effectively use source control.  As git (and GitHub) are the most widely used tools in modern development, investing the time to become a power user of these tools is critical for your success.  
+
+[item]: # (slide)
+
+## Go Do it Exercises
+
+Find a partner and complete these exercises 
+
+* Each of you create a new GitHub Repo and Local Clone
+    * *Do NOT name your repos the same thing, this will cause conflict*
+* One partner create a text file of all 50 States in the USA (one per line)
+* The other partner create a text file of all the Presidents of the USA (one per line)
+* Fork each others repos and add the Captials and Vice Presidents respectively
+* Open Issues and Pull requests to resolve these problems
+
+[item]: # (/slide)
 
 
 
