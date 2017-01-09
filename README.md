@@ -1988,6 +1988,23 @@ This request means "Thanks for your submitted changes, we'd love to take a look,
 
 [item]: # (slide)
 
+### Exercise Note
+
+If you are running this exercise indepently and not with a proctor, the following steps related to the conflict and rebasing will NOT work exactly as listed.  
+
+If this is the case, the commands to create the new remote, pull from upstream, and pull from upstream with rebase can still be ran, but the output may differ
+
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+### Pull Request with Conflict
+
+![](images/github-pr6.jpg)
+
+[item]: # (slide)
+
 ### What to do next... 
 
 * Update your respository with the "upstream" changes
@@ -1996,10 +2013,253 @@ This request means "Thanks for your submitted changes, we'd love to take a look,
 
 [item]: # (/slide)
 
+[item]: # (slide)
+
 ## Syncing a Repository to multiple Remotes
 
+**Remember:** 
 
-## Rebasing Code Changes    
+* "Distributed" Source Control = Multiple Copies
+* "origin" is just an alias that points to your GitHub Repository
+* The commands `git push` and `git pull` take an optional argument referencing the remote
+* "Upstream" is a common name for a repository that was the source of a "fork"
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+![](images/upstream-diagram.jpg)
+
+* `git pull upstream` to retrieve changes
+* You typically can't `git push upstream` due to permission issues
+* You `git push origin` and use Pull Requests to submit changes to upstream
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Add a new remote to your local repository for "upstream"
+
+```
+git remote add upstream https://github.com/imapex-training/101-github-lab
+git remote -v
+```
+```
+# Output 
+
+origin	https://github.com/hpreston/101-github-lab (fetch)
+origin	https://github.com/hpreston/101-github-lab (push)
+upstream	https://github.com/imapex-training/101-github-lab (fetch)
+upstream	https://github.com/imapex-training/101-github-lab (push)
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Pull the changes from upstream
+
+```
+git pull upstream master
+```
+```
+# Output
+
+From https://github.com/imapex-training/101-github-lab
+ * branch            master     -> FETCH_HEAD
+Auto-merging CONTRIBUTORS.txt
+CONFLICT (content): Merge conflict in CONTRIBUTORS.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* You could manually resolve the conflict, but instead... 
+* Abort the merge/pull
+
+```
+git merge --abort 
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+## Rebasing
+
+* Another way to merge changes between branches/forks 
+* Apply all the commits from the source branch, then reapply local changes
+* Not always possible to automatically complete
+
+[item]: # (slide)
+
+* Pull again, but with the rebase option 
+
+```
+git pull --rebase upstream master
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+```
+# Output
+
+From https://github.com/imapex-training/101-github-lab
+ * branch            master     -> FETCH_HEAD
+First, rewinding head to replay your work on top of it...
+Applying: Added Hank Preston to Contributors list
+Using index info to reconstruct a base tree...
+M	CONTRIBUTORS.txt
+Falling back to patching base and 3-way merge...
+Auto-merging CONTRIBUTORS.txt
+CONFLICT (content): Merge conflict in CONTRIBUTORS.txt
+error: Failed to merge in the changes.
+Patch failed at 0001 Added Hank Preston to Contributors list
+The copy of the patch that failed is found in: /tmp/101-github-lab/.git/rebase-apply/patch
+
+When you have resolved this problem, run "git rebase --continue".
+If you prefer to skip this patch, run "git rebase --skip" instead.
+To check out the original branch and stop rebasing, run "git rebase --abort".
+```
+
+* Oh darn... still a merge conflict
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Open `CONTRIBUTORS.txt` and fix the merge conflict
+
+```
+$ cat CONTRIBUTORS.txt
+
+John Smith - josmith@email.ex
+Jane Smith - jasmith@email.ex
+Hank Preston - hapresto@cisco.com
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* As the error message said `When you have resolved this problem, run "git rebase --continue".`
+
+```
+git add CONTRIBUTORS.txt
+git rebase --continue
+```
+```
+# Output
+
+Applying: Added Hank Preston to Contributors list
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Check the status of your repository
+
+```
+$ git status
+
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 2 and 2 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+nothing to commit, working tree clean
+```
+
+[item]: # (/slide)
+
+This message is fairly descriptive.  Because of the rebase, we have diverged from our "origin/master".  We need to resolve this through "git pull" to get ourselves back in sync.  
+
+[item]: # (slide)
+
+* Pull our remote changes back down 
+
+```
+git pull
+```
+```
+# Output 
+
+Auto-merging CONTRIBUTORS.txt
+CONFLICT (content): Merge conflict in CONTRIBUTORS.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Jeez... another conflict.  But if we look at this one, it isn't too bad
+
+```
+$ cat CONTRIBUTORS.txt
+John Smith - josmith@email.ex
+<<<<<<< HEAD
+Jane Smith - jasmith@email.ex
+=======
+>>>>>>> f834af7c62cd73f54cc03d10fdd5f08537180bfa
+Hank Preston - hapresto@cisco.com
+```
+
+[item]: # (/slide)
+
+* It really is just an indication that we have an extra line that the remote didn't have.
+
+[item]: # (slide)
+
+* Just clear the conflict indicators from the file.  
+
+```
+$ cat CONTRIBUTORS.txt
+John Smith - josmith@email.ex
+Jane Smith - jasmith@email.ex
+Hank Preston - hapresto@cisco.com
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* Add, commit, and push
+
+```
+git add CONTRIBUTORS.txt
+git commit -m "Completing the rebasing"
+git push
+```
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+* If we check our Pull Request, we can now be merged in again
+
+![](images/github-pr7.jpg)
+
+[item]: # (/slide)
+
+[item]: # (slide)
+
+### Some final thoughts
+
+* Merge conflicts **ALWAYS** require extra work to resolve
+* You should try to avoid them by 
+    * Only having one developer work on a single portion of code at a time
+    * Merging feature branches in as soon as possible
+* Rebasing, like any merging isn't always automatic
+
+[item]: # (/slide)
+
+
+
 
 
 ## Working With Others
