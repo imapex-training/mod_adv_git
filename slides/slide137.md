@@ -1,14 +1,13 @@
 
-* Pull our remote changes back down 
+* Check the status of your repository
 
 ```
-git pull
-```
-```
-# Output 
+$ git status
 
-Auto-merging CONTRIBUTORS.txt
-CONFLICT (content): Merge conflict in CONTRIBUTORS.txt
-Automatic merge failed; fix conflicts and then commit the result.
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 2 and 2 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+nothing to commit, working tree clean
 ```
 

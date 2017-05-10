@@ -1,11 +1,13 @@
 
-* Now, you need to switch to your branch.
+* Create a new branch called "shakespeare"
 
 ```
-git checkout shakespeare
+git branch shakespeare
+git branch
 ```
 ```
-# Output 
-Switched to branch 'shakespeare'
+# Output
+* master
+  shakespeare
 ```
 

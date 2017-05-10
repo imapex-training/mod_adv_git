@@ -1,14 +1,8 @@
 
-* Merge **example** into master
+* Add and Commit the change
 
 ```
-git merge example
-```
-```
-# Output
-
-Auto-merging first.txt
-CONFLICT (content): Merge conflict in first.txt
-Automatic merge failed; fix conflicts and then commit the result.
+git add first.txt
+git commit -m "Added -Hammlet to quote"
 ```
 

@@ -1,13 +1,14 @@
 
-* Jeez... another conflict.  But if we look at this one, it isn't too bad
+* Pull our remote changes back down 
 
 ```
-$ cat CONTRIBUTORS.txt
-John Smith - josmith@email.ex
-<<<<<<< HEAD
-Jane Smith - jasmith@email.ex
-=======
->>>>>>> f834af7c62cd73f54cc03d10fdd5f08537180bfa
-Hank Preston - hapresto@cisco.com
+git pull
+```
+```
+# Output 
+
+Auto-merging CONTRIBUTORS.txt
+CONFLICT (content): Merge conflict in CONTRIBUTORS.txt
+Automatic merge failed; fix conflicts and then commit the result.
 ```
 

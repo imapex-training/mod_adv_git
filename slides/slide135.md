@@ -1,13 +1,11 @@
 
-* As the error message said `When you have resolved this problem, run "git rebase --continue".`
+* Open `CONTRIBUTORS.txt` and fix the merge conflict
 
 ```
-git add CONTRIBUTORS.txt
-git rebase --continue
-```
-```
-# Output
+$ cat CONTRIBUTORS.txt
 
-Applying: Added Hank Preston to Contributors list
+John Smith - josmith@email.ex
+Jane Smith - jasmith@email.ex
+Hank Preston - hapresto@cisco.com
 ```
 

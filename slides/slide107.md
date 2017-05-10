@@ -1,5 +1,5 @@
 
-* After a few seconds you'll have your own copy of the repostiory on GitHub
+* ***If you are a member of organizations, be sure to select your own GitHub Account***
 
-![](images/github-fork3.jpg)
+![](images/github-fork2.jpg)
 

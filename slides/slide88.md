@@ -1,11 +1,13 @@
 
-* To resolve the conflict, open `first.txt` and delete the conflict indicator lines, and save the version with Hamlet spelled correctly.  
-
-```
-$ cat first.txt
-
-Our best thoughts came from others.
-To be or not to be, that is the question! -Hamlet
-Out, damned spot! Out, I say!
-```
+* When a merge conflict occurs, git uses these indicators to surround the conflict
+    * `<<<<<<< HEAD` 
+        * Inserted a line before the point of the conflict
+        * What follows is the version of the source file
+    * `=======`
+        * Inserted at the end of the point of conflict 
+        * *A conflict could be 1 or more lines of code/text*
+        * What follows is the version being **merged** into the source file
+    * `>>>>>>> example `
+        * Inserted after the point of the conflict
+        * After the `>>>>>>>` the name of the branch is listed 
 

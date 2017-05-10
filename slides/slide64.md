@@ -1,8 +1,10 @@
 
-* Complete your code change by adding and committing your change.  
+* Add some text to your `first.txt` with some text from Shakespeare.  `To be or not to be, that is the question!`
 
 ```
-git add first.txt
-git commit -m "Added To be or not to be"
+$ cat first.txt
+
+Our best thoughts came from others.
+To be or not to be, that is the question!
 ```
 

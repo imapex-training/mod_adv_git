@@ -1,5 +1,9 @@
 
-* If we check our Pull Request, we can now be merged in again
+* Add, commit, and push
 
-![](images/github-pr7.jpg)
+```
+git add CONTRIBUTORS.txt
+git commit -m "Completing the rebasing"
+git push
+```
 

@@ -1,9 +1,9 @@
 
-* Back in our local repository of our Fork, add yourself to the CONTRIBUTORS.txt file
+## Pull Requests
 
-```
-$ cat CONTRIBUTORS.txt
-John Smith - josmith@email.ex
-Hank Preston - hapresto@cisco.com
-```
+* notify others of your changes
+* request that they "pull" those changes into their work and merge them
+* issued from:
+  * forked repository
+  * branches in the same repository
 

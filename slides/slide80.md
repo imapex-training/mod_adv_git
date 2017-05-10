@@ -1,11 +1,9 @@
 
-* Add "-Hamlet" to the end of the second quote
+***We are going to purposely casue a conflict so we can fix it!***
+
+* Create and checkout a new branch called "example"
 
 ```
-$ cat first.txt
-
-Our best thoughts came from others.
-To be or not to be, that is the question! -Hamlet
-Out, damned spot! Out, I say!
+git checkout -b example
 ```
 

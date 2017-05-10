@@ -1,7 +1,8 @@
 
-* Pull again, but with the rebase option 
+* You could manually resolve the conflict, but instead... 
+* Abort the merge/pull
 
 ```
-git pull --rebase upstream master
+git merge --abort 
 ```
 

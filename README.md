@@ -876,6 +876,8 @@ Date:   Thu Jan 5 14:56:40 2017 -0500
     Create second.txt from web
 ```
 
+[item]: # (/slide)
+
 [item]: # (slide)
 
 * Execute `git reset --hard 4600bcecad83434ee50cf35e5697842e0f10faf0` to undo the changes.  **(Use your commit hash in the command)**

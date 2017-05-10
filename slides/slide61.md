@@ -1,18 +1,11 @@
 
-* You can shorten this into a single command with the `-b` flag for `git checkout`
+* Now, you need to switch to your branch.
 
 ```
-git checkout -b chaucer
-git branch
+git checkout shakespeare
 ```
 ```
-# Output #1
-Switched to a new branch 'chaucer'
-```
-```
-# Output #2
-* chaucer
-  master
-  shakespeare
+# Output 
+Switched to branch 'shakespeare'
 ```
 

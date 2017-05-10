@@ -1,5 +1,5 @@
 
-* Remember, you can include key words and Issue numbers in the PR title to automatically link them together.  
+* You'll be given a chance to view the changes, and then click "Create pull request"
 
-![](images/github-pr4.jpg)
+![](images/github-pr3.jpg)
 

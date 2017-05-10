@@ -1,7 +1,9 @@
 
-## Branches and More
+* Verify the changes are gone
 
-* `git branch`
-* `git merge`
-* `git stash`
+```
+$ cat first.txt
+
+Our best thoughts came from others.
+```
 

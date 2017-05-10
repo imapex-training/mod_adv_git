@@ -1,5 +1,9 @@
 
-* Open an issue against [imapex-training/101-github-lab](https://github.com/imapex-training/101-github-lab) that your email is missing in the contributors file
+## GitHub Issues 
 
-![](images/github-issue1.jpg)
+* Keep track of bugfixes
+* Track enhancements
+* Provide a forum for discussion about your code
+  * supports github flavored markdown for references to PR's, code, mentions, etc
+* Asignment, Milestones and Labels allow you to organize issues in a meaningful way
 

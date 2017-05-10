@@ -1,10 +1,22 @@
 
-* Add some text to your `first.txt` with some text from Shakespeare.  `To be or not to be, that is the question!`
+* We didn't really want a chaucer branch though, switch back to shakespeare and delete chaucer
 
 ```
-$ cat first.txt
-
-Our best thoughts came from others.
-To be or not to be, that is the question!
+git checkout shakespeare
+git branch -d chaucer
+git branch
+```
+```
+# Output #1
+Switched to branch 'shakespeare'
+```
+```
+# Output #2
+Deleted branch chaucer (was 4600bce).
+```
+```
+# Output #3
+  master
+* shakespeare
 ```
 

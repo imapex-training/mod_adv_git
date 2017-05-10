@@ -1,9 +1,10 @@
 
-* Add, commit, and push
+* Just clear the conflict indicators from the file.  
 
 ```
-git add CONTRIBUTORS.txt
-git commit -m "Completing the rebasing"
-git push
+$ cat CONTRIBUTORS.txt
+John Smith - josmith@email.ex
+Jane Smith - jasmith@email.ex
+Hank Preston - hapresto@cisco.com
 ```
 

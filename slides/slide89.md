@@ -1,13 +1,11 @@
 
-* Commit the change to finalze the merge
+* To resolve the conflict, open `first.txt` and delete the conflict indicator lines, and save the version with Hamlet spelled correctly.  
 
 ```
-git add first.txt 
-git commit -m "Manual merge of Hamlet"
-```
-```
-# Output 
+$ cat first.txt
 
-[master be5499b] Manual merge of Hamlet
+Our best thoughts came from others.
+To be or not to be, that is the question! -Hamlet
+Out, damned spot! Out, I say!
 ```
 

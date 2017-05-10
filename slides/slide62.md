@@ -1,22 +1,18 @@
 
-* We didn't really want a chaucer branch though, switch back to shakespeare and delete chaucer
+* You can shorten this into a single command with the `-b` flag for `git checkout`
 
 ```
-git checkout shakespeare
-git branch -d chaucer
+git checkout -b chaucer
 git branch
 ```
 ```
 # Output #1
-Switched to branch 'shakespeare'
+Switched to a new branch 'chaucer'
 ```
 ```
 # Output #2
-Deleted branch chaucer (was 4600bce).
-```
-```
-# Output #3
+* chaucer
   master
-* shakespeare
+  shakespeare
 ```
 
