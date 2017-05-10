@@ -1,7 +1,10 @@
 
-![](images/upstream-diagram.jpg)
+## Syncing a Repository to multiple Remotes
 
-* `git pull upstream` to retrieve changes
-* You typically can't `git push upstream` due to permission issues
-* You `git push origin` and use Pull Requests to submit changes to upstream
+**Remember:** 
+
+* "Distributed" Source Control = Multiple Copies
+* "origin" is just an alias that points to your GitHub Repository
+* The commands `git push` and `git pull` take an optional argument referencing the remote
+* "Upstream" is a common name for a repository that was the source of a "fork"
 

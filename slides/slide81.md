@@ -1,8 +1,11 @@
 
-* Add and Commit the change
+* Add "-Hamlet" to the end of the second quote
 
 ```
-git add first.txt
-git commit -m "Added -Hamlet to quote"
+$ cat first.txt
+
+Our best thoughts came from others.
+To be or not to be, that is the question! -Hamlet
+Out, damned spot! Out, I say!
 ```
 

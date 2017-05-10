@@ -1,8 +1,9 @@
 
-### Exercise Note
+### Pull Request Notes
 
-If you are running this exercise indepently and not with a proctor, the following steps related to the conflict and rebasing will NOT work exactly as listed.  
-
-If this is the case, the commands to create the new remote, pull from upstream, and pull from upstream with rebase can still be ran, but the output may differ
-
+* Only owners of a repository can "Merge" the Pull Request into the code 
+* If your running this lab during a class, the proctor can do that if they wish 
+* However, multiple students submitting PRs at the same time, on the same file will likely cause merge conflicts that need to be addressed
+* Repository owners typically won't resolve conflicts like that themselves
+    * They will ask you to "rebase" your changes
 

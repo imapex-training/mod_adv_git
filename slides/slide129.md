@@ -1,16 +1,7 @@
 
-* Add a new remote to your local repository for "upstream"
+![](images/upstream-diagram.jpg)
 
-```
-git remote add upstream https://github.com/imapex-training/101-github-lab
-git remote -v
-```
-```
-# Output 
-
-origin	https://github.com/hpreston/101-github-lab (fetch)
-origin	https://github.com/hpreston/101-github-lab (push)
-upstream	https://github.com/imapex-training/101-github-lab (fetch)
-upstream	https://github.com/imapex-training/101-github-lab (push)
-```
+* `git pull upstream` to retrieve changes
+* You typically can't `git push upstream` due to permission issues
+* You `git push origin` and use Pull Requests to submit changes to upstream
 

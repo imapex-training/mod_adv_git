@@ -1,15 +1,17 @@
 
-* Add, Commit, and Push the changes to master
+* Switch back to the master branch
 
 ```
-git add first.txt
-git commit -m "Added date to Emerson Quote"
-git push
+git checkout master
 ```
 
-* Checkout the lincoln branch again
+* Add "ca 1820-1840" to the end of the first line in `first.txt`
 
 ```
-git checkout lincoln
+$ cat first.txt
+
+Our best thoughts came from others. ca 1820-1840
+To be or not to be, that is the question! - Hamlet
+Out, damned spot! Out, I say!
 ```
 

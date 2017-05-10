@@ -1,18 +1,17 @@
 
-* Move into the new repository and verify you have a full local copy
+* Clone the repository locally to your workstation
+* **Be sure to clone YOUR repository, not `imapex-training` or the lab authors**
 
 ```
-cd 101-github-lab
-ls -la
+cd ~/coding
+git clone https://github.com/<YOUR GITHUB USER>/101-github-lab
 ```
 ```
-# Output 
+# Output
 
-total 16
-drwxr-xr-x   5 hapresto  wheel   170 Jan  8 10:36 .
-drwxrwxrwt  33 root      wheel  1122 Jan  8 10:36 ..
-drwxr-xr-x  13 hapresto  wheel   442 Jan  8 10:36 .git
--rw-r--r--   1 hapresto  wheel   173 Jan  8 10:36 CONTRIBUTORS.txt
--rw-r--r--   1 hapresto  wheel    16 Jan  8 10:36 README.md
+Cloning into '101-github-lab'...
+remote: Counting objects: 27, done.
+remote: Total 27 (delta 0), reused 0 (delta 0), pack-reused 27
+Unpacking objects: 100% (27/27), done.
 ```
 

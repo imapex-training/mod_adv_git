@@ -1,9 +1,7 @@
 
-* Verify that the new change does **not** exist in the master branch
+* Change back to master
 
 ```
-$ cat first.txt
-
-Our best thoughts came from others.
+git checkout master
 ```
 

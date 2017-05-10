@@ -1,11 +1,14 @@
 
-* Verify the updates were made to `first.txt`
+* Merge the shakespeare branch into master 
 
 ```
-$ cat first.txt
-
-Our best thoughts came from others.
-To be or not to be, that is the question!
-Out, damned spot! Out, I say!
+git merge shakespeare
+```
+```
+# Output
+Updating 4600bce..3bf82d8
+Fast-forward
+ first.txt | 2 ++
+ 1 file changed, 2 insertions(+)
 ```
 

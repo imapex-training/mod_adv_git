@@ -1,15 +1,14 @@
 
-* Take a look at the contents of `first.txt`
+* Merge **example** into master
 
 ```
-$ cat first.txt
+git merge example
+```
+```
+# Output
 
-Our best thoughts came from others.
-<<<<<<< HEAD
-To be or not to be, that is the question! -Hammlet
-=======
-To be or not to be, that is the question! -Hamlet
->>>>>>> example
-Out, damned spot! Out, I say!
+Auto-merging first.txt
+CONFLICT (content): Merge conflict in first.txt
+Automatic merge failed; fix conflicts and then commit the result.
 ```
 

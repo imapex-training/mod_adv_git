@@ -1,13 +1,12 @@
 
-* Push your changes up to GitHub
+* With the changes merged in, delete the branch
 
 ```
-git push
+git branch -d shakespeare
 ```
 ```
 # Output
-Total 0 (delta 0), reused 0 (delta 0)
-To https://github.com/hpreston/imapex-git
-   4600bce..3bf82d8  master -> master
+
+Deleted branch shakespeare (was 3bf82d8).
 ```
 

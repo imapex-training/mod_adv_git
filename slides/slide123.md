@@ -1,5 +1,5 @@
 
-* After opening, you'll be taken back to the PR list on the upstream repository.  
+* Remember, you can include key words and Issue numbers in the PR title to automatically link them together.  
 
-![](images/github-pr5.jpg)
+![](images/github-pr4.jpg)
 

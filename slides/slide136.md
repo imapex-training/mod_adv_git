@@ -1,13 +1,13 @@
 
-* Check the status of your repository
+* As the error message said `When you have resolved this problem, run "git rebase --continue".`
 
 ```
-$ git status
+git add CONTRIBUTORS.txt
+git rebase --continue
+```
+```
+# Output
 
-On branch master
-Your branch and 'origin/master' have diverged,
-and have 2 and 2 different commits each, respectively.
-  (use "git pull" to merge the remote branch into yours)
-nothing to commit, working tree clean
+Applying: Added Hank Preston to Contributors list
 ```
 

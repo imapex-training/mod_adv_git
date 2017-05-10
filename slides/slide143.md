@@ -1,5 +1,9 @@
 
-# Working With Others
+### Some final thoughts
 
-> You have your way. I have my way. As for the right way, the correct way, and the only way, it does not exist. ~ Friedrich Nietzsche
+* Merge conflicts **ALWAYS** require extra work to resolve
+* You should try to avoid them by 
+    * Only having one developer work on a single portion of code at a time
+    * Merging feature branches in as soon as possible
+* Rebasing, like any merging isn't always automatic
 

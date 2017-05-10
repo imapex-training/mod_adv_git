@@ -1,5 +1,5 @@
 
-* In GitHub in your repository, click the "New pull request" button
+* On GitHub, you can see that your info is now listed in **YOUR** repository
 
-![](images/github-pr2.jpg)
+![](images/github-pr1.jpg)
 

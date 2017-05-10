@@ -1,9 +1,24 @@
 
-* Add another quote to `first.txt`.  This time add "Out, damned spot! Out, I say!"
-* Add and Commit this change as well.  
+* Take a look at `.git/config` to see what this linkage looks like.  
 
 ```
-git add first.txt
-git commit -m "Added Lady Macbeth Quote."
+$ cat .git/config
+
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = https://github.com/hpreston/imapex-git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[branch "shakespeare"]
+	remote = origin
+	merge = refs/heads/shakespeare
 ```
 

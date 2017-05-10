@@ -1,9 +1,5 @@
 
-### Some final thoughts
+* If we check our Pull Request, we can now be merged in again
 
-* Merge conflicts **ALWAYS** require extra work to resolve
-* You should try to avoid them by 
-    * Only having one developer work on a single portion of code at a time
-    * Merging feature branches in as soon as possible
-* Rebasing, like any merging isn't always automatic
+![](images/github-pr7.jpg)
 

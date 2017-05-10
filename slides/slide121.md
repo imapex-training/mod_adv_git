@@ -1,5 +1,5 @@
 
-* You'll be given a chance to view the changes, and then click "Create pull request"
+* In GitHub in your repository, click the "New pull request" button
 
-![](images/github-pr3.jpg)
+![](images/github-pr2.jpg)
 

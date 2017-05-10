@@ -1,16 +1,16 @@
 
-* Pull the changes from upstream
+* Add a new remote to your local repository for "upstream"
 
 ```
-git pull upstream master
+git remote add upstream https://github.com/imapex-training/101-github-lab
+git remote -v
 ```
 ```
-# Output
+# Output 
 
-From https://github.com/imapex-training/101-github-lab
- * branch            master     -> FETCH_HEAD
-Auto-merging CONTRIBUTORS.txt
-CONFLICT (content): Merge conflict in CONTRIBUTORS.txt
-Automatic merge failed; fix conflicts and then commit the result.
+origin	https://github.com/hpreston/101-github-lab (fetch)
+origin	https://github.com/hpreston/101-github-lab (push)
+upstream	https://github.com/imapex-training/101-github-lab (fetch)
+upstream	https://github.com/imapex-training/101-github-lab (push)
 ```
 

@@ -1,10 +1,7 @@
 
-## Syncing a Repository to multiple Remotes
+### What to do next... 
 
-**Remember:** 
-
-* "Distributed" Source Control = Multiple Copies
-* "origin" is just an alias that points to your GitHub Repository
-* The commands `git push` and `git pull` take an optional argument referencing the remote
-* "Upstream" is a common name for a repository that was the source of a "fork"
+* Update your respository with the "upstream" changes
+* Rebase your code changes
+* Potentially close the original PR and open a new PR
 

@@ -1,8 +1,9 @@
 
-## Forking and More
+* *Review* Now merge the new lincoln branch to master 
 
-* Forking a Repository
-* Using GitHub Issues
-* Issuing Pull Requests
-* Managing Upstream Remotes
+```
+git checkout master
+git merge lincoln
+git push
+```
 

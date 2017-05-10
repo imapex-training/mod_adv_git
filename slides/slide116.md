@@ -1,9 +1,7 @@
 
-## Pull Requests
-
-* notify others of your changes
-* request that they "pull" those changes into their work and merge them
-* issued from:
-  * forked repository
-  * branches in the same repository
+* Anyone can open an issue on a repo
+* Anyone can comment on an issue
+* Only those with permission can add labels, make assignments, or close an issue
+    * Repository Owners
+    * Issue Opener
 

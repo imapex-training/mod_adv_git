@@ -1,12 +1,11 @@
 
-* With the changes merged in, delete the branch
+* Verify the updates were made to `first.txt`
 
 ```
-git branch -d shakespeare
-```
-```
-# Output
+$ cat first.txt
 
-Deleted branch shakespeare (was 3bf82d8).
+Our best thoughts came from others.
+To be or not to be, that is the question!
+Out, damned spot! Out, I say!
 ```
 
