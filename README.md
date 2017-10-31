@@ -47,7 +47,7 @@ Version Control Systems (more than appending "v1, v2, v#" that is) are not new t
 
 Git (and GitHub) are **Distributed** Version Control Systems.  The "Distributed" part indicates that the actual code base is not centralized to a single location.  In this solution, each developer maintains a "local" repository on their workstation where they can "commit" their work and changes.  Then they "push" the changes to a "remote" repository from which other developers can "pull" changes to their workstations.  
 
-This distributed model enables teams of developers to more easily stay in sync with each other.  However, with multiple copies of the code base existing, there is a potential for conflicts to occure during the process of merging code together.  We will look at this potential and how to resolve during the lab session.  
+This distributed model enables teams of developers to more easily stay in sync with each other.  However, with multiple copies of the code base existing, there is a potential for conflicts to occur during the process of merging code together.  We will look at this potential issue and how to resolve it during the lab session.  
 
 [item]: # (slide)
 
@@ -65,7 +65,7 @@ Though often discussed like they are the same thing, **git** and **GitHub** are 
 
 **git** is the Client application and specification for a distributed version control system.  
 
-**GitHub** is a Server (or Service) providing Remote Repository services that leverages the git client and protocol.  In addition to simply providing remote repostiory storage for git users, GitHub also offers other development features to users that aren't specifically related to "git".  These include issue tracking, project management boards, metrics, etc.  
+**GitHub** is a Server (or Service) providing Remote Repository services that leverages the git client and protocol.  In addition to simply providing remote repository storage for git users, GitHub also offers other development features to users that aren't specifically related to "git".  These include issue tracking, project management boards, metrics, etc.  
 
 [item]: # (slide)
 
@@ -75,7 +75,7 @@ Though often discussed like they are the same thing, **git** and **GitHub** are 
 
 [item]: # (/slide)
 
-Like many companeis before it (ie Xerox or Klenix), GitHub has basically become synomonous with "git" and is clearly the leading service for developers, however it isn't the only option for developers looking to host their code.  Some options include 
+Like many companies before it (ie. Xerox or Klenix), GitHub has basically become synonymous with "git" and is clearly the leading service for developers, however it isn't the only option for developers looking to host their code.  Some options include: 
 
 * [Gogs](http://gogs.io)
 * [Phabricator](https://www.phacility.com/phabricator/)
@@ -116,7 +116,11 @@ Let's start by reviewing the basiscs of getting started with git and GitHub in a
 [item]: # (slide)
 
 ## Client Setup `git config`
-```git config --global user.name "Your Name Comes Here"git config --global user.email you@yourdomain.example.com```
+
+```
+git config --global user.name "Your Name Comes Here"
+git config --global user.email you@yourdomain.example.com
+```
 
 [item]: # (/slide)
 
@@ -192,7 +196,7 @@ However, there is no requirement that you leverage a remote server like GitHub. 
 
 The first option is for a truly new project where no code exists.  You can simply copy and paste the commands displayed into a terminal window (you should already be in a directory where you want your code to be located) to get started.  
 
-The second option is when you already created a git repostiory locally and want to link it to the remote repository you just created.  
+The second option is when you already created a git repository locally and want to link it to the remote repository you just created.  
 
 The last option would allow you to import code from a non-git project.  
 
@@ -230,7 +234,7 @@ What these commands do:
 * `echo "# imapex-git" >> README.md`
     * Create a new text file called "README.md" with the contents "# imapex-git"
 * `git init`
-    * Initilizea a local git repostory in the current directory
+    * Initialize a local git repository in the current directory
 * `git add README.md`
     * Add the "README.md" file to the repository
 * `git commit -m "first commit"`
@@ -264,7 +268,7 @@ Branch master set up to track remote branch master from origin.
 
 [item]: # (/slide)
 
-There is now a copy of your repositroy (granted, there isn't much in there yet) on GitHub that matches your local copy.  If you had checked the box to "Initialize with a README" when creating it originally, you would have the same result.  
+There is now a copy of your repository (granted, there isn't much in there yet) on GitHub that matches your local copy.  If you had checked the box to "Initialize with a README" when creating it originally, you would have the same result.  
 
 [item]: # (slide)
 
@@ -319,7 +323,7 @@ drwxr-xr-x  13 hapresto  wheel   442 Jan  5 14:15 .git
 
 [item]: # (/slide)
 
-The `.git` directory is the actual repository informaiton locally.  The `.git/config` file has interesting information in it.  
+The `.git` directory is the actual repository storing information locally.  The `.git/config` file has interesting information in it.  
 
 [item]: # (slide)
 
@@ -700,7 +704,7 @@ Changes to be committed:
 
 [item]: # (slide)
 
-* Locally Repository ahead of Remote Repository
+* Local Repository ahead of Remote Repository
 
 ```
 On branch master
@@ -713,7 +717,7 @@ nothing to commit, working tree clean
 
 [item]: # (slide)
 
-* Local and Remote Repostiries in sync 
+* Local and Remote Repositories in sync 
 
 ```
 On branch master
@@ -916,14 +920,15 @@ In this section we'll look at some of the options available for not breaking wor
 
 ## Code Branches 
 
-* Used to develop features
+Used to:
+* develop features
 * isolate changes
 * repos maintain a default branch, usually master
 * can be merged into other branches
 
 [item]: # (/slide)
 
-Let's say you have a new feature that you're working on.  You might have to refactor some of your code, and you want to be able to checkin your changes as you make progress.  However, you don't want to box yourself in a corner and prevent easy changes to your production code.  In order to manage this type of situation, you need to isolate your changes, and so you should use `git` branching.
+Let's say you have a new feature that you're working on.  You might have to refactor some of your code, and you want to be able to check-in your changes as you make progress.  However, you don't want to box yourself in a corner and prevent easy changes to your production code.  In order to manage this type of situation, you need to isolate your changes, and so you should use `git` branching.
 
 [item]: # (slide)
 
@@ -1100,7 +1105,7 @@ The first time you push a new branch to GitHub you need to use the option `-u` t
 
 It is important to understand that though it is good practice, it is **not** required that the name of a branch be the same in local and remote repositories.  If you were to use a command like `git push -u origin bob`, you would create a new branch in the GitHub instance of the repository called "bob" that was linked with yoru local branch called "shakespeare".  
 
-Where this typically becomes a problem is if you use the command `git push -u origin master` from within a branch.  This will result in your local branch being linked to the `master` branch on GitHub.  Not something every done intentionally.  
+Where this typically becomes a problem is if you use the command `git push -u origin master` from within a branch.  This will result in your local branch being linked to the `master` branch on GitHub.  Not something ever done intentionally.  
 
 [item]: # (slide)
 
@@ -1225,7 +1230,7 @@ With `git merge` you can add commits from one branch into another branch.  This 
 
 [item]: # (slide)
 
-### `git merge` in asci art
+### `git merge` in ascii art
 
 ```
 	  A---B---C feature
@@ -1327,7 +1332,7 @@ Though this can occur when working independently on a project, it is much more c
 
 [item]: # (slide)
 
-***We are going to purposely casue a conflict so we can fix it!***
+***We are going to purposely cause a conflict so we can fix it!***
 
 * Create and checkout a new branch called "example"
 
@@ -1715,7 +1720,7 @@ In this section we'll look at the basics of working with someone else's code.  W
 
 * Using "forks" to use another repository as a starting point for a project.  
 * How you can file issues against a repository if you find a bug or have a feature request.  
-* Explore how the Pull Request provides a developer the abiltity to contribute code to another person's project
+* Explore how the Pull Request provides a developer the ability to contribute code to another person's project
 * Linking your local repository to multiple remote repositories to stay in sync with upstream changes
 
 [item]: # (slide)
@@ -1731,7 +1736,7 @@ In this section we'll look at the basics of working with someone else's code.  W
 
 [item]: # (/slide)
 
-Forking and Branching are mechanisms used by Git to diverge from the main code line for feature development, or bug fixes. Branches are seperate trains within the same repository, whereas a fork, creates a copy of the entire repository in a different location (user account). From the perspective of a single developer the two are very similar, however, it is important to consider what other developers are doing relative to the project. The fork based workflow is dominant in opensource projects as contributors likely would not have access to push code to the main repository.
+Forking and Branching are mechanisms used by Git to diverge from the main code line for feature development, or bug fixes. Branches are separate trains within the same repository, whereas a fork, creates a copy of the entire repository in a different location (user account). From the perspective of a single developer the two are very similar, however, it is important to consider what other developers are doing relative to the project. The fork based workflow is dominant in opensource projects as contributors likely would not have access to push code to the main repository.
 
 For more information see this [Stack Overflow Post](http://stackoverflow.com/questions/3611256/forking-vs-branching-in-github)
 
@@ -1825,13 +1830,13 @@ This file lists all the names and emails of the project contributors.  As we'll 
 * Track enhancements
 * Provide a forum for discussion about your code
   * supports github flavored markdown for references to PR's, code, mentions, etc
-* Asignment, Milestones and Labels allow you to organize issues in a meaningful way
+* Assignment, Milestones and Labels allow you to organize issues in a meaningful way
 
 [item]: # (/slide)
 
 Issues are the primary vehicle by which feature enhancements and bug fixes are tracked.
 
-Labels are used to categorize the the issue. Examples of tags are enhancement, *bug*, *question*, *help wanted*.
+Labels are used to categorize the issue. Examples of tags are *enhancement*, *bug*, *question*, *help wanted*.
 
  A detailed explanation of Issues, Labels, and Milestones can be found [Here](https://guides.github.com/features/issues/)
 
@@ -1992,9 +1997,9 @@ This request means "Thanks for your submitted changes, we'd love to take a look,
 
 ### Exercise Note
 
-If you are running this exercise indepently and not with a proctor, the following steps related to the conflict and rebasing will NOT work exactly as listed.  
+If you are running this exercise independently and not with a proctor, the following steps related to the conflict and rebasing will NOT work exactly as listed.  
 
-If this is the case, the commands to create the new remote, pull from upstream, and pull from upstream with rebase can still be ran, but the output may differ
+If this is the case, the commands to create the new remote, pull from upstream, and pull from upstream with rebase can still be ran, but the output may differ.
 
 
 [item]: # (/slide)
@@ -2009,7 +2014,7 @@ If this is the case, the commands to create the new remote, pull from upstream, 
 
 ### What to do next... 
 
-* Update your respository with the "upstream" changes
+* Update your repository with the "upstream" changes
 * Rebase your code changes
 * Potentially close the original PR and open a new PR
 
@@ -2276,7 +2281,7 @@ There are many opinions on the "right" way to collaborate on development project
 * The significance of the "master" branch
 * And many other topics
 
-Like many topics, there is not true "right" way, however there are many opinions available.  Often these opinions were developed after many projects and scars from attempting something one way vs another.  
+Like many topics, there is no true "right" way, however there are many opinions available.  Often these opinions were developed after many projects and scars from attempting something one way vs another.  
 
 And also like many lessons in life, sometimes you won't understand until you make the mistake yourself.  That said... 
 
@@ -2321,7 +2326,7 @@ Find a partner and complete these exercises
     * *Do NOT name your repos the same thing, this will cause conflict*
 * One partner create a text file of all 50 States in the USA (one per line)
 * The other partner create a text file of all the Presidents of the USA (one per line)
-* Fork each others repos and add the Captials and Vice Presidents respectively
+* Fork each others repos and add the Capitals and Vice Presidents respectively
 * Open Issues and Pull requests to resolve these problems
 
 [item]: # (/slide)
